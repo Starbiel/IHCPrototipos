@@ -14,8 +14,15 @@ const HomePage = () => {
             display: "flex",
             justifyContent: "space-between",
             flexDirection: "row",
+            flexWrap: "wrap",
+            gap: 2,
             width: "100%",
         }}>
+            <RefCard card={card} />
+            <RefCard card={card} />
+            <RefCard card={card} />
+                        <RefCard card={card} />
+            <RefCard card={card} />
             <RefCard card={card} />
         </Box>
     );

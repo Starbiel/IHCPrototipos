@@ -13,6 +13,7 @@ const routes = createBrowserRouter(
                 {
                     index: true,
                     element: <Home />,
+                    
                 }
             ],
         }

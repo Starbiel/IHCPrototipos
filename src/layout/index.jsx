@@ -1,13 +1,14 @@
 import { Outlet } from "react-router";
-import NavBar from "../components/nav";
 import { Box, Container } from "@mui/material";
 import BannerTop from "../components/navItems/BannerTop";
+import Footer from "../components/footer/Footer";
+import ResponsiveNav from "../components/navBar";
 
 function MainLayout() {
   return (
     <Box>
         <BannerTop height={160} />
-        <NavBar />
+        <ResponsiveNav />
         <Container
             maxWidth="lg"
             sx={{
@@ -19,6 +20,7 @@ function MainLayout() {
         >
             <Outlet />
         </Container>
+        <Footer />
     </Box>
   );
 }

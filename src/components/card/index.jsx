@@ -12,8 +12,9 @@ export default function RefCard({card}) {
     return (
         <Card 
             sx={{ 
-                maxWidth: 345, 
-                borderRadius: "0px 0px 10px 10px",
+                maxWidth: "45%", 
+                borderRadius: "10px",
+                boxShadow: "0px 10px 10px 0px rgba(0, 0, 0, 0.1)",
             }}
             onClick={() => {
                 navigate("/refcard");
@@ -26,7 +27,11 @@ export default function RefCard({card}) {
                 image={card.image}
                 alt="green iguana"
             />
-            <CardContent>
+            <CardContent
+                sx={{
+                    backgroundColor: "rgba(0, 0, 0, 0.05)",
+                }}
+            >
                 <Typography gutterBottom variant="h5" component="div">
                     {card.title}
                 </Typography>
