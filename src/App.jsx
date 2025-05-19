@@ -2,9 +2,10 @@ import { useState } from 'react'
 import routes from './routes'
 
 import './App.css'
-import { Box } from '@mui/material'
+import { Box, ThemeProvider } from '@mui/material'
 import { RouterProvider } from 'react-router'
 import Color from './enum/colors'
+import theme from './theme';
 
 function App() {
 
@@ -14,7 +15,9 @@ function App() {
         backgroundColor: Color.primary,
       }}
     >
-      <RouterProvider router={routes} />
+      <ThemeProvider theme={theme}>
+        <RouterProvider router={routes} />
+      </ThemeProvider>
     </Box>
   )
 }
