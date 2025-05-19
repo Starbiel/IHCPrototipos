@@ -25,6 +25,8 @@ const navConfig = [
     children: [
       { label: 'Graduação', to: '/cursos/graduacao' },
       { label: 'Especialização', to: '/cursos/especializacao' },
+      { label: 'Cursos com carga horaria EaD', to: '/cursos/EaD' },
+      { label: 'Mestrado', to: '/cursos/mestrado' },
     ],
   },
   { label: 'LABCIPEAD', children: [{ label: 'Apresentação', to: '/labcipead' }] },

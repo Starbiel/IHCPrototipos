@@ -4,6 +4,7 @@ import MainLayout from "../layout";
 
 const Home = lazy(() => import("../pages/home"));
 const Sobre = lazy(() => import("../pages/about"));
+const EaD = lazy(() => import("../pages/courses"));
 
 const routes = createBrowserRouter(
     [
@@ -16,24 +17,32 @@ const routes = createBrowserRouter(
         </Suspense>
         ),
         children: [
-        {
-            index: true,
-            element: (
-            <Suspense fallback={<div>Carregando página inicial...</div>}>
-                <Home />
-            </Suspense>
-            ),
-        },
-        {
-            path: "sobre",
-            element: (
-            <Suspense fallback={<div>Carregando página sobre...</div>}>
-                <Sobre />
-            </Suspense>
-        ),
-      },
-    ],
-  },
+            {
+                index: true,
+                element: (
+                <Suspense fallback={<div>Carregando página inicial...</div>}>
+                    <Home />
+                </Suspense>
+                ),
+            },
+            {
+                path: "sobre",
+                element: (
+                <Suspense fallback={<div>Carregando página sobre...</div>}>
+                    <Sobre />
+                </Suspense>
+                ),
+            },
+            {
+                path: "cursos/EaD",
+                element: (
+                <Suspense fallback={<div>Carregando página cursos...</div>}>
+                    <EaD />
+                </Suspense>
+                ),
+            }
+        ],
+    },
 ]);
 
 export default routes;
