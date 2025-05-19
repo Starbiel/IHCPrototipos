@@ -11,7 +11,7 @@ export default function PrimaryNav() {
             <AppBar
                 position="static"
                 elevation={0}
-                sx={{ backgroundColor: theme.palette.primary, boxShadow: 'inset 0 -1px #d9e1ec', borderRadius: 1, }}
+                sx={{ backgroundColor: theme.palette.background.default, boxShadow: 'inset 0 -1px #d9e1ec', borderRadius: 1, }}
             >
                 <Toolbar variant="dense" disableGutters>
                     <Container maxWidth="lg" sx={{ display: 'flex', gap: 1 }}>

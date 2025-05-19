@@ -1,6 +1,6 @@
 // theme.js
 import { createTheme, lighten, darken } from '@mui/material/styles';
-import { Color } from './colors';
+import Color from './enum/colors';
 
 const theme = createTheme({
   palette: {
