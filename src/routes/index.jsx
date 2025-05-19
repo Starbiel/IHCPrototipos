@@ -6,15 +6,14 @@ const Home = lazy(() => import("../pages/home"));
 const Sobre = lazy(() => import("../pages/about"));
 const EaD = lazy(() => import("../pages/courses"));
 
-const routes = createBrowserRouter(
-    [
+const routes = createBrowserRouter([
     {
 
         path: "/",
         element: (
-        <Suspense fallback={<div>Carregando layout...</div>}>
-            <MainLayout />
-        </Suspense>
+            <Suspense fallback={<div>Carregando layout...</div>}>
+                <MainLayout />
+            </Suspense>
         ),
         children: [
             {
