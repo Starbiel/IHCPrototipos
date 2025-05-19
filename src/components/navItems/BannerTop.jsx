@@ -26,7 +26,7 @@ export default function BannerTop({
         {/* banner é uma imagem única, portanto <img> simples */}
         <Box
           component="img"
-          src={banner_img}
+          src={src || banner_img}
           alt="Banner UFPR / SEaDIP"
           sx={{ width: '100%', height: 'auto' }}
         />

@@ -6,7 +6,7 @@ import {
   ListItemText,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router';
 
 export default function NavDropdown({ label, items = [] }) {
   const [anchorEl, setAnchorEl] = useState(null);
