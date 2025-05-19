@@ -9,8 +9,8 @@ const navConfig = [
   {
     label: 'SEaDIP',
     children: [
-      { label: 'Sobre', to: '/seadip/sobre' },
-      { label: 'Equipe', to: '/seadip/equipe' },
+      { label: 'Sobre', to: '/sobre' },
+      { label: 'Equipe', to: '/equipe' },
     ],
   },
   {
