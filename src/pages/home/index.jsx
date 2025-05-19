@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import RefCard from "../../components/card";
 
 const card = {
@@ -17,8 +17,9 @@ const HomePage = () => {
             width: "100%",
         }}>
             <RefCard card={card} />
-            <RefCard card={card} />
-            <RefCard card={card} />
+            <Button variant="contained" color="primary" sx={{ marginTop: "20px" }}>
+                Clique me
+            </Button>
         </Box>
     );
 }
