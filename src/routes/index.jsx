@@ -6,6 +6,7 @@ const Home = lazy(() => import("../pages/home"));
 const Sobre = lazy(() => import("../pages/about"));
 const EaD = lazy(() => import("../pages/courses"));
 const Equipe = lazy(() => import("../pages/team/equipe"));
+const Contato = lazy(() => import("../pages/contato"));
 
 const routes = createBrowserRouter([
   {
@@ -45,6 +46,14 @@ const routes = createBrowserRouter([
         element: (
           <Suspense fallback={<div>Carregando página equipe...</div>}>
             <Equipe />
+          </Suspense>
+        ),
+      },
+      {
+        path: "contato",
+        element: (
+          <Suspense fallback={<div>Carregando página contato...</div>}>
+            <Contato />
           </Suspense>
         ),
       },

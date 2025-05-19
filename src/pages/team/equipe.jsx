@@ -145,9 +145,9 @@ function MemberCard({ name, info, lattes, agenda, role }) {
 export default function EquipePage() {
   return (
     <Box
+      maxWidth="lg"
       sx={{
-        maxWidth: 1500,
-        minWidth: 320,
+        width: "100%",
         mx: "auto",
         my: 2,
         px: { xs: 1, sm: 2 },
