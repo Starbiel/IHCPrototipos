@@ -4,7 +4,7 @@ import MobileNav from './MobileNav';
 
 function ResponsiveNav() {
   const theme = useTheme();
-  const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
+  const isDesktop = useMediaQuery(theme.breakpoints.up('lg'));
 
   return isDesktop ? <PrimaryNav /> : <MobileNav />;
 }

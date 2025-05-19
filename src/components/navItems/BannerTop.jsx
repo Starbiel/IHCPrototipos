@@ -27,7 +27,7 @@ export default function BannerTop({
           component="img"
           src={ banner_img}
           alt="Banner UFPR / SEaDIP"
-          sx={{ width: '100%', height: 'auto' }}
+          sx={{ objectFit: "cover", height: 'auto' }}
         />
       </Container>
     </Box>

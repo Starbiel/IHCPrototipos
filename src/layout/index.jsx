@@ -14,8 +14,8 @@ function MainLayout() {
             sx={{
                 display: 'flex',
                 justifyContent: 'center',
-                maxHeight: '100%',
                 paddingTop: 2,
+                minHeight: 'calc(100vh - 260px)',
             }}
         >
             <Outlet />

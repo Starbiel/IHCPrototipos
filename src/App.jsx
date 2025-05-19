@@ -7,7 +7,6 @@ import { RouterProvider } from 'react-router'
 import Color from './enum/colors'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <Box
