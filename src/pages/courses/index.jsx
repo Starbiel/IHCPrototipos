@@ -1,8 +1,8 @@
+// src/pages/CoursesPage.jsx
 import React, { useEffect, useRef, useState } from 'react';
 import {
   Container,
   CircularProgress,
-  Alert,
   Typography,
   Box
 } from '@mui/material';
@@ -24,6 +24,13 @@ export default function CoursesPage() {
 
   useEffect(() => {
     const t = setTimeout(() => {
+      ufprSectors.sort((a, b) => a.name.localeCompare(b.name));
+      ufprSectors.forEach(sector => {
+        sector.courses?.sort((a, b) => a.name.localeCompare(b.name));
+        sector.courses?.forEach(course => {
+          course.disciplines?.sort((a, b) => a.name.localeCompare(b.name));
+        });
+      });
       setSectors(ufprSectors);
       setLoading(false);
     }, 600);
@@ -35,10 +42,14 @@ export default function CoursesPage() {
     setOpenSector(sector);
     setOpenCourse(course);
     setOpenDiscipline(discipline);
+
     // scroll suave depois que os accordions estiverem abertos
     // pequeno delay garante que o DOM já renderizou
     setTimeout(() => {
-      disciplineRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      disciplineRef.current?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center'
+      });
     }, 200);
   };
 
@@ -52,21 +63,26 @@ export default function CoursesPage() {
       <SearchDiscipline sectors={sectors} onSelect={handleSelect} />
 
       {loading ? (
-        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }} aria-busy="true">
+        <Box
+          sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}
+          aria-busy="true"
+        >
           <CircularProgress />
         </Box>
       ) : (
-        sectors.map(sec => (
+        sectors.map((sec) => (
           <SectorAccordion
             key={sec.name}
             sector={sec}
             expanded={openSector === sec.name}
             onToggle={() =>
-              setOpenSector(prev => (prev === sec.name ? null : sec.name))
+              setOpenSector((prev) => (prev === sec.name ? null : sec.name))
             }
-            /* passa controles descendentes */
+            /* ➤ Passa controles descendentes */
             openCourse={openCourse}
+            setOpenCourse={setOpenCourse}
             openDiscipline={openDiscipline}
+            setOpenDiscipline={setOpenDiscipline}
             disciplineRef={disciplineRef}
           />
         ))

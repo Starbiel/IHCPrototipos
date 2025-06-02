@@ -30,15 +30,27 @@ export default function SearchDiscipline({ sectors, onSelect }) {
       size="small"
       disablePortal
       options={options}
-      getOptionLabel={opt => opt.label}
+      getOptionLabel={(opt) => opt.label}
       onChange={(_e, value) => value && onSelect(value)}
-      renderInput={params => (
+      renderInput={(params) => (
         <TextField
           {...params}
           label="Buscar disciplina"
           placeholder="Digite código ou nome..."
+          sx={{
+            '& .MuiOutlinedInput-notchedOutline': {
+              borderRadius: "10px 10px 0 0",
+              border: '0px',
+            },
+          }}
         />
       )}
+      sx={{
+        backgroundColor: '#fff',
+        border: '0px',
+        borderRadius: '10px 10px 0 0', 
+        paddingTop: 1,
+      }}
     />
   );
 }

@@ -1,15 +1,19 @@
 import React from 'react';
-import { Box, Container } from '@mui/material';
+import { Box, Container, useMediaQuery, useTheme } from '@mui/material';
 import banner_img from "../../assets/images/banner_site.png";
 
 export default function BannerTop({
-  height = 140,
+  height = 180,
 }) {
+
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
     <Box
       sx={{
         width: '100%',
-        height,
+        height: isMobile ? "50px" : height,
         display: 'flex',
         alignItems: 'center',
       }}
@@ -20,6 +24,8 @@ export default function BannerTop({
           display: 'flex',
           justifyContent: 'center',
           maxHeight: '100%',
+          paddingBottom: 0,
+          paddingTop: 0,
         }}
       >
         {/* banner é uma imagem única, portanto <img> simples */}

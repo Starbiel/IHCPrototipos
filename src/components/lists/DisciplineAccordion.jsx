@@ -1,3 +1,4 @@
+// src/components/lists/DisciplineAccordion.jsx
 import React from 'react';
 import {
   Accordion,
@@ -12,6 +13,7 @@ import DisciplineDetails from './DisciplineDetails';
 export default function DisciplineAccordion({
   discipline,
   expanded,
+  onToggle,
   scrollRef
 }) {
   const { code, name, workload } = discipline;
@@ -21,6 +23,7 @@ export default function DisciplineAccordion({
       sx={{ ml: 4 }}
       disableGutters
       expanded={expanded}
+      onChange={onToggle}
       ref={scrollRef}
     >
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
