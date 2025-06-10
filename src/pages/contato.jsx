@@ -59,9 +59,12 @@ export default function ContatoPage() {
         </Typography>
         <Divider sx={{ mb: 2 }} />
         <Box component="form" onSubmit={handleSubmit} autoComplete="off">
-          <Stack spacing={2}>
+          <Stack spacing={1}>
+            <Typography variant="body1" color="text.primary" sx={{ alignSelf: "flex-start" }}>
+              Seu nome (obrigatório) 
+            </Typography>
             <TextField
-              label="Seu nome (obrigatório)"
+              label="Nome Completo"
               name="nome"
               value={form.nome}
               onChange={handleChange}
@@ -69,8 +72,11 @@ export default function ContatoPage() {
               fullWidth
               variant="outlined"
             />
+            <Typography variant="body1" color="text.primary" sx={{ alignSelf: "flex-start" }}>
+              Seu e-mail (obrigatório)
+            </Typography>
             <TextField
-              label="Seu e-mail (obrigatório)"
+              label="email@mail.com"
               name="email"
               value={form.email}
               onChange={handleChange}
@@ -79,16 +85,22 @@ export default function ContatoPage() {
               variant="outlined"
               type="email"
             />
+            <Typography variant="body1" color="text.primary" sx={{ alignSelf: "flex-start" }}>
+              Assunto
+            </Typography>
             <TextField
-              label="Assunto"
+              label="Assunto..."
               name="assunto"
               value={form.assunto}
               onChange={handleChange}
               fullWidth
               variant="outlined"
             />
+            <Typography variant="body1" color="text.primary" sx={{ alignSelf: "flex-start" }}>
+              Sua mensagem
+            </Typography>
             <TextField
-              label="Sua mensagem"
+              label="Sua mensagem..."
               name="mensagem"
               value={form.mensagem}
               onChange={handleChange}
@@ -98,12 +110,13 @@ export default function ContatoPage() {
               variant="outlined"
             />
             {error && <Alert severity="error">{error}</Alert>}
+            <br/>
             <Button
               type="submit"
               variant="contained"
               color="primary"
               disabled={loading}
-              sx={{ alignSelf: "flex-start", minWidth: 120, fontWeight: 700 }}
+              sx={{ alignSelf: "flex-end", minWidth: 120, fontWeight: 700 }}
             >
               {loading ? "Enviando..." : "ENVIAR"}
             </Button>
