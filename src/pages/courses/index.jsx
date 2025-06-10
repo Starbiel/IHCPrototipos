@@ -55,7 +55,7 @@ export default function CoursesPage() {
 
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
-      <Typography variant="h4" component="h1" gutterBottom>
+      <Typography variant="h4" component="h1" gutterBottom sx={{ color: 'white' }}>
         Cursos de Graduação com Carga Horária EaD
       </Typography>
 
